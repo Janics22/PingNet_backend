@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: pingpong-backend       # Nombre del servicio en Render
+    env: node
+    plan: free
+    buildCommand: "npm install"  # Instala dependencias
+    startCommand: "node server.js"  # Comando para arrancar tu backend
+    autoDeploy: true             # Deploy automático al hacer push en GitHub
+    envVars:
+      - key: DOMAIN
+        value: "pingnetgames.com"  # Opcional, si quieres usar la variable en tu server.js
